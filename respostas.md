@@ -73,3 +73,4 @@ loop true gera numero aleatorio como no exercicio 1 e imprime este numero apenas
 tentativas ++ para uncrementar numero de tentativas
 se numero x identido numero aleatorio imprime o numero x e voce acertou em tantas tentativas
 _______________________________________
+Faça um pull request com o nome respostas-da-semana.
