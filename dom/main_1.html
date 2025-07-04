@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicando DOM</title>
+</head>
+<body>
+    <h2 id="titulo">
+        Lista de tarefas
+    </h2>
+
+    <form onsubmit="adicionaItem();return false">
+        <input type="text" id="textoItem" placeholder="Digite um item">
+        <button onclick="adicionaItem()">Adicionar novo item!</button>
+    </form>
+    <ul id="lista">
+        <li> Item1</li>
+    </ul>
+    
+    <script src="aula0307.js"></script>
+</body>
+</html>

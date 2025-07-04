@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+
+</head>
+
+<body>
+Digite um numero entre 1 e 10:
+<input type="number" id="jogador" name="jogador" placeholder="Inserir um número:">
+  <button id="calcular">Calcular</button>
+
+  <div class="container">
+    
+  <div class="caixa-mensagem">
+  <p><div id="mensagem" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f9f9f9;max-width: 40%;" ></div></p>
+</div>
+<!-- JAVASCRPIT-->
+<script>
+  const calcular = document.getElementById("calcular");
+  const jogador = document.getElementById("jogador");
+  const mensagemDiv = document.getElementById("mensagem");
+
+  calcular.addEventListener("click", function() {
+    const numeroDigitado = parseInt(jogador.value); //  valor digitado
+    if (isNaN(numeroDigitado) || numeroDigitado < 1 || numeroDigitado > 10) {
+    mensagemDiv.innerText = "Por favor, digite um número entre 1 e 10.";//conforme solicitado
+    return;
+  }
+    const numeroAleatorio = Math.floor(Math.random() * 10) + 1;// cria numero aleatorio
+    console.log(`Número escolhido: ${numeroAleatorio}`);
+    const resultado = numeroDigitado + numeroAleatorio;
+    console.log(`Resultado: ${resultado}`);
+    if (resultado % 2 === 0) {
+      mensagemDiv.innerText = "O resultado é par";
+    } else {
+      alert("O resultado é ímpar");//para variar a exibição
+    }
+  });
+
+  calcular.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      calcular.click();
+    }
+  });
+</script>
+</body>
+<br>
+<br>
+<footer></footer>
+<a href="https://github.com/willians-peter" title="Perfil do GitHub de Willians Peter" target="_blank" style="cursor: pointer; text-decoration: underline;">Visite meu GitHub:</a>
+     <p>&copy; 2025 Peter Willian's Cipriano</p>
+     </footer>
+</html>
+<!-- [M01S05] Exercício 4: Jogo do Par ou Ímpar
+ Tópicos: Aplicando DOM! Operadores lógicos, estruturas condicionais, funções.
+
+📄 Enunciado:
+Peça para o usuário digitar um número entre 1 e 10.
+O computador também gera um número aleatório entre 1 e 10.
+Some os dois números e diga se o resultado é par ou ímpar.
+
+✅ Use:
+
+Math.random() + Math.floor();
+
+% 2 === 0 para verificar par;
+
+Funções para separar lógica do jogo;
+
+alert() ou exibição no HTML para o resultado.
+-->

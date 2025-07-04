@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de idade</title>
+</head>
+<body>
+    <h1>Calculadodara de idade</h1>
+      <input type="number" id="anoNascimento" placeholder="Digite seu ano de nascimento">
+        <button id="calcularIdade">Calcular</button>
+         
+        <div class="container">
+  <div class="mensagem">
+    <h1><div id="mensagem"></div></h1>
+  </div>
+  </div>
+   <script>
+    
+const calcularIdade = document.getElementById("calcularIdade"); 
+const anoNascimentoInput = document.getElementById("anoNascimento");
+const mensagemDiv = document.getElementById("mensagem");
+
+calcularIdade.addEventListener("click", function() {
+  const anoNascimento = parseInt(anoNascimentoInput.value);
+  const anoAtual = new Date().getFullYear();
+  const idade = new Date().getFullYear() - anoNascimento; // busca o ano atual
+
+  if (isNaN(idade) || idade < 0) {
+    mensagemDiv.innerText = "Por favor, insira um ano de nascimento válido.";
+  } else {
+    mensagemDiv.innerText = `Você tem ou terá  ${idade} anos até  o final deste ano.`;
+  }
+});
+
+anoNascimentoInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    calcularIdade.click();
+  }
+});
+</script>
+</body>
+</html>
+<!---
+[M01S05] Exercício 1: Calculadora de Idade
+Tópicos: Aplicando DOM! Tipos de dados, variáveis, operadores matemáticos, interação com HTML
+
+📄 Enunciado:
+Crie uma página HTML com um campo de entrada para o ano de nascimento e um botão "Calcular idade".
+Quando o usuário clicar no botão, mostre na tela sua idade estimada com base no ano atual.
+
+✅ Dicas técnicas:
+
+Use prompt() ou input + addEventListener;
+
+Calcule: 2025 - anoDigitado;
+
+Exiba o resultado no HTML com innerText ou textContent.
+-->

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cor</title>
+
+    <style>
+        #cordefundo {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            border-radius: 50%
+        }
+
+        #mensagem {
+            font-size: 24px;
+            font-weight: bold;
+
+        }
+    
+
+        button {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sinaleira {
+            width: 100px;
+            margin: 0 auto 20px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .luz {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 10px;
+            background-color: #111;
+        }
+
+        .vermelho.ativo {
+            background-color: red;
+        }
+
+        .amarelo.ativo {
+            background-color: yellow;
+
+        }
+
+        .verde.ativo {
+            background-color: green;
+
+        }
+
+        .vermelho.ativo {
+            background-color: red;
+        }
+
+        .amarelo.ativo {
+            background-color: yellow;
+
+        }
+
+        .verde.ativo {
+            background-color: green;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>botões seletores!</div>
+    <button id="botaoVermelho" style="background-color: red;"></button>
+    <button id="botaoAmarelo" style="background-color: yellow;"></button>
+    <button id="botaoVerde" style="background-color: green;"></button>
+
+    <h2>Sinaleira DOM</h2>
+
+    <div class="sinaleira">
+        <div id="vermelho" class="luz vermelho"></div>
+        <div id="amarelo" class="luz amarelo"></div>
+        <div id="verde" class="luz verde"></div>
+    </div>
+    <p id="mensagem"></p>
+
+    <script>
+    const mensagem = document.getElementById("mensagem")
+        
+         document.getElementById('botaoVermelho').addEventListener("click", function (){acender('vermelho');
+         mensagem.innerText = "Pare!";});
+         document.getElementById('botaoAmarelo').addEventListener("click", function (){acender('amarelo');
+         mensagem.innerText = "Atenção!";});
+         document.getElementById('botaoVerde').addEventListener("click", function (){acender('verde');
+         mensagem.innerText = "Siga!";});
+         function acender(cor) {
+        document.getElementById('vermelho').classList.remove("ativo");
+        document.getElementById('amarelo').classList.remove("ativo");
+        document.getElementById('verde').classList.remove("ativo");
+        document.getElementById(cor).classList.add("ativo");
+         }   
+
+    </script>
+</body>
+<br>
+<br>
+<footer></footer>
+<a href="https://github.com/willians-peter" title="Perfil do GitHub de Willians Peter" target="_blank"
+    style="cursor: pointer; text-decoration: underline;">Visite meu GitHub:</a>
+<p>&copy; 2025 Peter Willian's Cipriano</p>
+</footer>
+
+</html>
+<!--
+[M01S05] Exercício 2: Semáforo Interativo
+Descrição
+Editar
+Tópicos: Aplicando DOM! Eventos, manipulação de CSS, condicional if/else
+
+📄 Enunciado:
+Crie três botões: "Vermelho", "Amarelo" e "Verde".
+Ao clicar em cada botão, um div com fundo colorido deve mudar para a respectiva cor do semáforo.
+Mostre também uma mensagem (ex: "Pare", "Atenção", "Siga").
+
+✅ Use:
+
+addEventListener("click", ...);
+
+Manipulação de estilo: element.style.backgroundColor = "red" etc.;
+
+if/else para exibir mensagens diferentes. 
+-->

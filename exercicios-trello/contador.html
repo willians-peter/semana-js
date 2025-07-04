@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+
+
+
+</head>
+
+<body>
+
+    <H1>Contador</H1>
+  <button id="contador">Click aqui</button>
+    <div class="container">
+    
+ <div class="caixa-mensagem">
+  <p><div id="mensagem" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f9f9f9;max-width: 40%;" ></div></p>
+</div>
+
+<script>
+    const contador = document.getElementById("contador");
+    const mensagemDiv = document.getElementById("mensagem");
+    let click = 0;
+
+    contador.addEventListener("click", function() {
+      click++;
+      mensagemDiv.innerText = `Você clicou aqui ${click} vezes.`;
+    });
+</script>
+
+</body>
+<br>
+<br>
+<footer></footer>
+<a href="https://github.com/willians-peter" title="Perfil do GitHub de Willians Peter" target="_blank" style="cursor: pointer; text-decoration: underline;">Visite meu GitHub:</a>
+     <p>&copy; 2025 Peter Willian's Cipriano</p>
+     </footer>
+</html>
+<!--
+[M01S05] Exercício 3: Contador de Cliques
+Descrição
+Editar
+Tópicos: Aplicando DOM! Variáveis, funções, eventos, manipulação de DOM.
+
+📄 Enunciado:
+Crie um botão com o texto "Clique aqui".
+Cada vez que o botão for clicado, mostre na tela quantas vezes ele foi clicado.
+
+✅ Use:
+
+Uma variável let contador = 0;
+
+Um addEventListener no botão;
+
+Atualize o valor em um <p> ou <span> com innerText.
+    -->
